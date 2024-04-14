@@ -112,11 +112,14 @@ img, video {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 20px auto;
 }
 
+.header h4 a#contact-link {
+    margin-left: -130px; /* Adjust this value to control the leftward positioning of the "Contact" link */
+}
 .title {
     margin: 0;
     color: white;
@@ -149,11 +152,11 @@ a {
 </head>
 <body>
     <div class="header">
-        <a href="#" id="about-link">About</a>
-        <h1 class="title">Page Title</h1>
-        <a href="#" id="contact-link">Contact</a>
-        
+        <h4><a href="#" id="about-link">A b o u t</a></h2>
+        <h1 class="title">P a g e   T i t l e</h1>
+        <h4><a href="#" id="contact-link">C o n t a c t</a></h2>
     </div>
+    
     <div id="grid" class="grid">
         <!-- Grid items will be inserted here by JavaScript -->
     </div>
