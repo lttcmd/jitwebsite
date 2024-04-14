@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLMJ>>></title>
+    <style>
+
+html, body {
+    touch-action: manipulation;
+    overscroll-behavior: none;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;;
+    gap: 16px;
+    width: 90%; /* Adjust the width based on your preference */
+    max-width: 1200px; /* Limits the maximum width of the grid */
+    margin: 0 auto; /* Centers the grid */
+}
+
+.media-item {
+    width: calc(33.333% - 25px); /* 3 items per row, accounting for some gap */
+    margin-bottom: 1px; /* Space between rows */
+}
+
+@media (max-width: 900px) {
+    .media-item {
+        width: calc(50% - 10px); /* 2 items per row on smaller screens */
+    }
+}
+
+img, video {
+    width: 100%; /* Ensures the media items scale to fill their container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed; /* Use fixed positioning to cover the whole screen */
+    top: 0;
+    left: 0;
+    right: 0; /* Ensure it extends to the right edge */
+    bottom: 0; /* Ensure it extends to the bottom edge */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.94); /* Use solid color (no transparency) */
+    display: none; /* Start hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above all other content */
+}
+
+
+/* Modal Content Container */
+.modal-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-video {
+    width: 100%; /* Adjust as necessary */
+    max-height: 70vh;
+}
+
+.modal-title, .modal-text {
+    color: white;
+    padding: 10px;
+}
+
+.modal-text {
+    max-width: 600px; /* Adjust this value based on your design needs */
+    word-wrap: break-word; /* Ensures words do not overflow the container */
+    margin: 0 auto; /* Centers the text block if the modal is wider */
+    padding: 15px; /* Adds some padding around the text for readability */
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    left: 20px; /* Move to the top left */
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    z-index: 1010; /* Ensure it's above the video content */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.title {
+    margin: 0;
+    color: white;
+}
+
+.about-link,
+.contact-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.about-link:hover,
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.body-no-scroll {
+    overflow: hidden; /* Prevent scrolling on the body */
+
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#" id="about-link">About</a>
+        <h1 class="title">Page Title</h1>
+        <a href="#" id="contact-link">Contact</a>
+        
+    </div>
+    <div id="grid" class="grid">
+        <!-- Grid items will be inserted here by JavaScript -->
+    </div>
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 class="modal-title"></h3>
+            <div class="modal-video-container"></div>
+            <p class="modal-text">This text will be replaced by the video description.</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+
+</html>
