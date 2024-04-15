@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     contactLink.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent the default action
-        displayModal("Contact", "Email: contact@gjkgkrfmaf.com");
+        displayModal("Contact", "Email: contact@jit.ter");
     });
 
     // Function to display custom content in the modal
